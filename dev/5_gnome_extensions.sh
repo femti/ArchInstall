@@ -2,7 +2,7 @@
 set -e
 
 echo '==== Enable Shell ===='
-yay -S --noconfirm --needed gnome-shell-extension-rounded-window-corners gnome-shell-extension-coverflow-alt-tab-git gnome-shell-extension-dash-to-dock gnome-shell-extension-openweather gnome-shell-extension-appindicator gnome-shell-extension-blur-my-shell gnome-shell-extension-gsconnect gnome-shell-extension-gtk4-desktop-icons-ng gnome-shell-extension-status-area-horizontal-spacing-git
+# yay -S --noconfirm --needed gnome-shell-extension-rounded-window-corners gnome-shell-extension-dash-to-dock gnome-shell-extension-openweather gnome-shell-extension-appindicator gnome-shell-extension-blur-my-shell gnome-shell-extension-gsconnect gnome-shell-extension-gtk4-desktop-icons-ng gnome-shell-extension-status-area-horizontal-spacing-git
 su -l wlad <<< $(cat << SHEL
 gsettings set org.gnome.shell disable-user-extensions false
 gnome-extensions enable dash-to-dock@micxgx.gmail.com

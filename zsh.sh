@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 set -e
-
-sudo pacman -S gnome-terminal zsh
-sudo pacman -R gnome-console
 echo '==== ZSH ===='
 chsh -s /usr/bin/zsh
 # restart terminal
@@ -21,7 +18,8 @@ git clone https://github.com/mrx04programmer/ZshTheme-ArchCraft/
 mv ZshTheme-ArchCraft/archcraft-dwm.zsh-theme $PWD
 rm -rf ZshTheme-ArchCraft 
 cd
-# go to the section where is ZSH_THEME= and add 'archcraft-dwm'
+# go to the section where is ZSH_THEME= and add 'archcraft-dwm'  ZSH_THEME="robbyrussell"
+sed -i '/ZSH_THEME=/s/robbyrussell/archcraft-dwm/' /home/wlad/.zshrc
 nano .zshrs
 source .zshrc
 
