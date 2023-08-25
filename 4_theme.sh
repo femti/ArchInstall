@@ -4,11 +4,11 @@ set -e
 echo '==== Copy files to directory ===='
 cd /home/wlad
 mkdir .myscripts
-cp /home/wlad/arch/scripts /home/wlad/.myscripts
+cp -r /home/wlad/arch/scripts /home/wlad/.myscripts
 cd
 
 echo '==== Install Flatpak package ===='
-sudo flatpak install -y flathub org.mozilla.firefox org.onlyoffice.desktopeditors net.xmind.XMind io.github.shiftey.Desktop net.ankiweb.Anki org.gustavoperedo.FontDownloader com.rafaelmardojai.Blanket app.drey.Dialect com.brave.Browser de.bund.ausweisapp.ausweisapp2 com.bitwarden.desktop com.mattjakeman.ExtensionManager io.github.davidoc26.wallpaper_selector com.github.d4nj1.tlpui
+sudo flatpak install -y flathub org.onlyoffice.desktopeditors net.xmind.XMind io.github.shiftey.Desktop net.ankiweb.Anki org.gustavoperedo.FontDownloader com.rafaelmardojai.Blanket app.drey.Dialect com.brave.Browser de.bund.ausweisapp.ausweisapp2 com.bitwarden.desktop com.mattjakeman.ExtensionManager io.github.davidoc26.wallpaper_selector com.github.d4nj1.tlpui
 
 echo 'Enable Gnome extensions ===='
 cd /home/wlad
@@ -54,5 +54,16 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font "Roboto Medium 10"
 gsettings set org.gnome.desktop.wm.preferences theme "WhiteSur-Light"
 bash /home/wlad/.myscripts/WhiteSur-gtk-theme/install.sh -l -c Light
 echo 'gtk-hint-font-metrics=1' >> /home/wlad/.config/gtk-4.0/settings.ini
+
+echo 'Copy scripts to bin'
+cd /home/wlad/.mysrcipts/scripts
+chmod +x light
+chmod +x dark
+chmod +x upd
+chmod +x chbs
+sudo cp light /usr/bin
+sudo cp dark /usr/bin
+sudo cp upd /usr/bin
+sudo cp chbs /usr/bin
 cd
 
