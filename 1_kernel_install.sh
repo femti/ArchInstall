@@ -9,9 +9,9 @@ pacman-key --lsign-key 56C464BAAC421453
 echo '[linux-surface]' >> /etc/pacman.conf
 echo 'Server = https://pkg.surfacelinux.com/arch/' >> /etc/pacman.conf
 pacman -Syu
-pacman -S --noconfirm linux-surface linux-surface-headers iptsd
+pacman -S --noconfirm linux-surface linux-surface-headers iptsd linux-firmware-marvell
 # pacman -S linux-surface-secureboot-mok
-grub-mkconfig -o /boot/grub/grub.cfg
+# grub-mkconfig -o /boot/grub/grub.cfg
 
 echo '==== Install add package ===='
 pacman -S --noconfirm --needed eog-plugins geany geary geany-plugins gnome-epub-thumbnailer ntfs-3g unrar p7zip dbus-broker tlp acpi acpi_call acpid plymouth ttf-droid noto-fonts ttf-roboto ttf-ubuntu-font-family ttf-fira-mono ttf-hack ttf-fira-code ttf-jetbrains-mono inter-font mesa-utils xorg-xdpyinfo xorg-xinit xorg-xinput xorg-xkill xorg-xrandr xf86-video-intel dhclient dnsmasq dnsutils ethtool modemmanager networkmanager-openconnect networkmanager-openvpn nss-mdns usb_modeswitch bash-completion bluez-utils ffmpegthumbnailer gst-libav gst-plugins-ugly libdvdcss libopenraw mlocate efitools haveged nfs-utils nilfs-utils ntp dmidecode dmraid hdparm hwdetect lsscsi mtools sg3_utils sof-firmware intel-ucode gnome-power-manager gnome-shell-extension-appindicator webp-pixbuf-loader tlp-rdw upower thermald irqbalance gnome-terminal zsh 
